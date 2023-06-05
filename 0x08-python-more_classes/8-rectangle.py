@@ -66,13 +66,15 @@ class Rectangle:
 
         Args:
             rect_1 (Rectangle): The first Rectangle.
-            rect_2 (Rectangle): the second rectangle.
+            rect_2 (Rectangle): The second Rectangle.
         Raises:
             TypeError: If either of rect_1 or erect_2 is not a Rectangle.
         """
         if not isisntance(rect_1, Rectangle):
+            raise TypeError("rect_1, must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.are() >= rect_2.area():
+        if rect_1.area() >= rect_2.area():
             return (rect_1)
         return (rect_2)
 
