@@ -6,7 +6,7 @@ def append_write(filename="", text=""):
     """Print a given number of lines from a UTF8 text file to stdout.
     Args:
         filename (str): The name of the file
-        nb_lines (int): The number of lines to read from file.
+        nb_lines (int): The number of lines to read from the file.
     """
     with open(filename, encoding="utf-8") as f:
         if nb_lines <= 0:
@@ -18,5 +18,11 @@ def append_write(filename="", text=""):
             lines += 1
         f.seek(0)
         if nb_lines >= lines:
-            print(f.readline(), end="")
-            n += 1
+            print(f.read(), end="")
+            return
+
+        else:
+            n = 0
+            while n < nb_lines:
+                print(f.readline(), end="")
+                n += 1
